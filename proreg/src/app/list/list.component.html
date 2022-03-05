@@ -1,0 +1,37 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Firstname</th>
+      <th scope="col">Lastname</th>
+      <th scope="col">D.O.B</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Address</th>
+      <th scope="col">Email</th>
+      <th scope="col">Registered Date</th>
+      <th scope="col">Person ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of Data; let i = index" (click)="getPerson(i)">
+      <td>{{ i + 1 }}</td>
+      <td>{{ row.firstName }}</td>
+      <td>{{ row.lastName }}</td>
+      <td>{{ row.birthdayDate }}</td>
+      <td>{{ row.gender }}</td>
+      <td>{{ row.address }}</td>
+      <td>{{ row.email }}</td>
+      <td>{{ row.regDate }}</td>
+      <td>{{ row.personId }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<ngx-spinner
+  bdColor="rgba(51, 51, 51, 0.8)"
+  size="default"
+  type="ball-spin-clockwise"
+  color="#fff"
+>
+  <p style="color: white">Loading...</p>
+</ngx-spinner>

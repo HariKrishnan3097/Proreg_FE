@@ -1,0 +1,15 @@
+.bgcolor {
+  background-color: aliceblue;
+}
+
+input.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+select.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+.haserror {
+  color: red;
+}

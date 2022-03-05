@@ -1,0 +1,157 @@
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div
+          class="card shadow-2-strong card-registration bgcolor"
+          style="border-radius: 15px"
+        >
+          <div class="card-body p-4 p-md-5">
+            <h3
+              class="mb-4 pb-2 pb-md-0 mb-md-5"
+              *ngFor="let row of personDetail"
+            >
+              {{ row.lastName + "," + row.firstName }}
+            </h3>
+            <form readonly>
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input
+                      type="text"
+                      id="firstName"
+                      class="form-control form-control-lg"
+                      readonly
+                    />
+                    <label class="form-label" for="firstName"
+                      >First Name*</label
+                    >
+                    <br />
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input
+                      type="text"
+                      id="lastName"
+                      class="form-control form-control-lg"
+                      readonly
+                    />
+                    <label class="form-label" for="lastName">Last Name*</label>
+                    <br />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 d-flex align-items-center">
+                  <div class="form-outline datepicker w-100">
+                    <input
+                      type="date"
+                      class="form-control form-control-lg"
+                      id="birthdayDate"
+                      readonly
+                    />
+                    <label for="birthdayDate" class="form-label"
+                      >Birthday</label
+                    >
+                    <br />
+                  </div>
+                </div>
+
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <input
+                      type="email"
+                      id="emailAddress"
+                      class="form-control form-control-lg"
+                      readonly
+                    />
+                    <label class="form-label" for="emailAddress">Email</label>
+                    <br />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <input
+                      type="tel"
+                      id="phoneNumber"
+                      class="form-control form-control-lg"
+                      readonly
+                    />
+                    <label class="form-label" for="phoneNumber"
+                      >Phone Number</label
+                    >
+                    <br />
+                  </div>
+                </div>
+
+                <div class="col-md-6 mb-4 d-flex align-items-center">
+                  <div class="form-outline datepicker w-100">
+                    <input
+                      type="date"
+                      class="form-control form-control-lg"
+                      id="regDate"
+                      readonly
+                    />
+                    <label for="regDate" class="form-label"
+                      >Registration Date*</label
+                    >
+                    <br />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <textarea
+                      class="form-control"
+                      id="address"
+                      rows="3"
+                      readonly
+                    ></textarea>
+
+                    <label class="form-label" for="address">Address</label>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                  <label for="gender">Gender*</label>
+                  <select
+                    id="gender"
+                    class="form-control input-medium"
+                    readonly
+                  >
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="mt-4 pt-2">
+                <input
+                  class="btn btn-primary btn-lg"
+                  type="submit"
+                  value="Submit"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ngx-spinner
+  bdColor="rgba(51, 51, 51, 0.8)"
+  size="default"
+  type="ball-spin-clockwise"
+>
+  <p style="color: white">Please Wait.</p>
+</ngx-spinner>

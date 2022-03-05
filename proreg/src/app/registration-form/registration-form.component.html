@@ -1,0 +1,208 @@
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div
+          class="card shadow-2-strong card-registration bgcolor"
+          style="border-radius: 15px"
+        >
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Person Registration</h3>
+            <form [formGroup]="RegistrationForm" (ngSubmit)="savePerson()">
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input
+                      type="text"
+                      id="firstName"
+                      class="form-control form-control-lg"
+                      formControlName="firstName"
+                    />
+                    <label class="form-label" for="firstName"
+                      >First Name*</label
+                    >
+                    <br />
+                    <span
+                      class="haserror"
+                      *ngIf="
+                        RegistrationForm.controls['firstName'].invalid &&
+                        RegistrationForm.controls['firstName'].touched
+                      "
+                      >First name is required</span
+                    >
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input
+                      type="text"
+                      id="lastName"
+                      formControlName="lastName"
+                      class="form-control form-control-lg"
+                    />
+                    <label class="form-label" for="lastName">Last Name*</label>
+                    <br />
+                    <span
+                      class="haserror"
+                      *ngIf="
+                        RegistrationForm.controls['lastName'].invalid &&
+                        RegistrationForm.controls['lastName'].touched
+                      "
+                      >Last name is required</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 d-flex align-items-center">
+                  <div class="form-outline datepicker w-100">
+                    <input
+                      type="date"
+                      class="form-control form-control-lg"
+                      id="birthdayDate"
+                      formControlName="birthdayDate"
+                    />
+                    <label for="birthdayDate" class="form-label"
+                      >Birthday</label
+                    >
+                    <br />
+                    <span
+                      class="haserror"
+                      *ngIf="RegistrationForm.controls['birthdayDate'].invalid"
+                      >Date should be in following format DD/MM/YYYY</span
+                    >
+                  </div>
+                </div>
+
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <input
+                      type="email"
+                      id="emailAddress"
+                      class="form-control form-control-lg"
+                      formControlName="email"
+                    />
+                    <label class="form-label" for="emailAddress">Email</label>
+                    <br />
+                    <span
+                      class="haserror"
+                      *ngIf="
+                        RegistrationForm.controls['email'].invalid &&
+                        RegistrationForm.controls['email'].touched
+                      "
+                      >Enter valid email
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <input
+                      type="tel"
+                      id="phoneNumber"
+                      class="form-control form-control-lg"
+                      formControlName="phoneNumber"
+                    />
+                    <label class="form-label" for="phoneNumber"
+                      >Phone Number</label
+                    >
+                    <br />
+                    <span
+                      class="haserror"
+                      *ngIf="
+                        RegistrationForm.controls['phoneNumber'].invalid &&
+                        RegistrationForm.controls['phoneNumber'].touched
+                      "
+                      >Enter valid phone number</span
+                    >
+                  </div>
+                </div>
+
+                <div class="col-md-6 mb-4 d-flex align-items-center">
+                  <div class="form-outline datepicker w-100">
+                    <input
+                      type="date"
+                      class="form-control form-control-lg"
+                      id="regDate"
+                      formControlName="regDate"
+                    />
+                    <label for="regDate" class="form-label"
+                      >Registration Date*</label
+                    >
+                    <br />
+                    <span
+                      class="haserror"
+                      *ngIf="
+                        RegistrationForm.controls['regDate'].invalid &&
+                        RegistrationForm.controls['regDate'].touched
+                      "
+                      >Registration date is required in following format
+                      DD-MM-YYYY</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <textarea
+                      class="form-control"
+                      id="address"
+                      rows="3"
+                      formControlName="address"
+                    ></textarea>
+
+                    <label class="form-label" for="address">Address</label>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                  <label for="gender">Gender*</label>
+                  <select
+                    id="gender"
+                    class="form-control"
+                    formControlName="gender"
+                  >
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                    /
+                  </select>
+                  <span
+                    class="haserror"
+                    *ngIf="
+                      RegistrationForm.controls['gender'].invalid &&
+                      RegistrationForm.controls['gender'].touched
+                    "
+                    >Please select gender</span
+                  >
+                </div>
+              </div>
+
+              <div class="mt-4 pt-2">
+                <input
+                  class="btn btn-primary btn-lg"
+                  type="submit"
+                  value="Submit"
+                  [disabled]="!RegistrationForm.valid"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ngx-spinner
+  bdColor="rgba(51, 51, 51, 0.8)"
+  size="default"
+  type="ball-spin-clockwise"
+>
+  <p style="color: white">Please Wait.</p>
+</ngx-spinner>
