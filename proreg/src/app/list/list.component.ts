@@ -58,6 +58,7 @@ export class ListComponent implements OnInit {
         console.log(
           res.forEach((person: IPerson) => {
             console.log(person);
+            console.table(person);
           })
         );
         this.singlePersonData = res;
